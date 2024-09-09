@@ -1,0 +1,899 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root {
+    --orange: #ff7800;
+    --black: #130f40;
+    --light-color: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    --border: .2rem solid rgba(0, 0, 0, .1);
+    --outline: .1rem solid rgba(0, 0, 0, .1);
+    --outline-hover: .2rem solid var(--black);
+}
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body {
+    background: #eee;
+
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    color: var(--black);
+
+}
+
+.heading span {
+    background: var(--orange);
+    color: #fff;
+    display: inline-block;
+    padding: .5rem 3rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.1rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--black);
+    color: var(--black);
+    cursor: pointer;
+    background: none;
+}
+
+.btn:hover {
+    background: var(--orange);
+    color: #191b2a;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 2%;
+    /* background: #191b2a; */
+    /* opacity: 84%; */
+
+
+}
+
+
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+
+.header .navbar a {
+    font-size: 1.7rem;
+    margin: 0 1rem;
+    color: #fff;
+
+}
+
+.header .navbar a:hover {
+    color: var(--orange);
+}
+
+.header .icons div {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color: var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover {
+    background: var(--orange);
+    color: #fff;
+}
+
+#menu-btn {
+    display: none;
+}
+
+.header .search-form {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    width: 50rem;
+    height: 5rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.header .search-form.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .search-form input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 0 1.5rem;
+}
+
+.header .search-form label {
+    font-size: 2.2rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .search-form label:hover {
+    color: var(--orange);
+}
+
+.header .shopping-cart {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 35rem;
+    background: #fff;
+}
+
+.header .shopping-cart.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .shopping-cart .box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin: 1rem 0;
+}
+
+.header .shopping-cart .box img {
+    height: 10rem;
+}
+
+.header .shopping-cart .box .fa-trash {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    cursor: pointer;
+    color: var(--light-color);
+    transform: translateY(-50%);
+}
+
+.header .shopping-cart .box .fa-trash:hover {
+    color: var(--orange);
+}
+
+.header .shopping-cart .box .content h3 {
+    color: var(--black);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+}
+
+.header .shopping-cart .box .content span {
+    color: var(--light-color);
+    font-size: 1.6rem;
+}
+
+.header .shopping-cart .box .content .quantity {
+    padding-left: 1rem;
+}
+
+.header .shopping-cart .total {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    text-align: center;
+    color: var(--black);
+}
+
+.header .shopping-cart .btn {
+    display: block;
+    text-align: center;
+    margin: 1rem;
+}
+
+.header .login-form {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    width: 35rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    border-radius: .5rem;
+    background: white;
+    text-align: center;
+}
+
+.header .login-form.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .login-form h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.header .login-form .box {
+    width: 100%;
+    margin: .7rem 0;
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+}
+
+.header .login-form p {
+    font-size: 1.4rem;
+    padding: .5rem 0;
+    color: var(--light-color);
+}
+
+.header .login-form p a {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.home {
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    background: url('https://builtin.com/sites/www.builtin.com/files/styles/og/public/2022-09/hardware.png');
+    background-position: 0% 35%;
+    background-size: 100%;
+    padding-top: 14rem;
+    padding-bottom: 20rem;
+
+
+}
+
+.home .content {
+    text-align: center;
+    width: 50rem;
+}
+
+.home .content h3 {
+    font-size: 3rem;
+    font-family: 'Chivo Mono', monospace;
+    font-family: 'Inter', sans-serif;
+    padding-top: 8%;
+}
+
+.home .content h3 span {
+    color: var(--orange);
+}
+
+/* .home .content p {
+    color: black;
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    line-height: 1.8;
+} */
+
+.parts {
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    background-color: black;
+    background-position: 0% 35%;
+    background-size: 100%;
+    padding-top: 14rem;
+    padding-bottom: 5rem;
+}
+
+.parts .content h3 {
+    font-size: 3rem;
+    color: #fff;
+    font-family: 'Chivo Mono', monospace;
+    font-family: 'Inter', sans-serif;
+}
+
+.features {
+    background-color: #666;
+}
+
+.features .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1.5rem;
+}
+
+.features .box-container .box {
+    padding: 5rem 2rem 0rem;
+    text-align: center;
+    height: 50rem;
+    background-color: #B18C5A;
+    color: var(--black);
+}
+
+.features .box-container .box .btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    font-size: 1.1rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--black);
+    color: var(--black);
+    cursor: pointer;
+    background: #f6831e;
+}
+
+.features .box-container .box .btn:hover {
+    background: #f6831e8a;
+    color: #191b2a;
+}
+
+.features .box-container .box img {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.features .box-container .box:hover {
+    border: 1.5px solid black;
+}
+
+
+.features .box-container .box h3 {
+    font-size: 2.5rem;
+    line-height: 1.8;
+    color: var(--black);
+}
+
+.features .box-container .box p {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: var(--black);
+    padding: 0rem;
+}
+
+.products .product-slider {
+    padding: 1rem;
+}
+
+.products .product-slider:first-child {
+    margin-bottom: 2rem;
+}
+
+.products .product-slider .box {
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    outline-offset: -1rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: .2s linear;
+}
+
+.products .product-slider .box:hover {
+    outline-offset: 0rem;
+    outline: var(--outline-hover);
+}
+
+.products .product-slider .box img {
+    height: 20rem;
+}
+
+.products .product-slider .box h3 {
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.products .product-slider .box .price {
+    font-size: 2rem;
+    color: var(--light-color);
+    padding: .5rem 0;
+}
+
+.products .product-slider .box .stars i {
+    font-size: 1.7rem;
+    color: var(--orange);
+    padding: .5rem 0;
+}
+
+.categories .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 1.5rem;
+}
+
+.categories .box-container .box {
+    padding: 3rem 2rem;
+    border-radius: .5rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+}
+
+.categories .box-container .box:hover {
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.categories .box-container .box img {
+    margin: 1rem 0;
+    height: 15rem;
+}
+
+.categories .box-container .box h3 {
+    font-size: 2rem;
+    color: var(--black);
+    line-height: 1.8;
+}
+
+.categories .box-container .box p {
+    font-size: 1.7rem;
+    color: var(--light-color);
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.review .review-slider {
+    padding: 1rem;
+}
+
+.review .review-slider .box {
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    outline-offset: -1rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: .2s linear;
+}
+
+.review .review-slider .box:hover {
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.review .review-slider .box img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+}
+
+.review .review-slider .box p {
+    padding: 1rem 0;
+    line-height: 1.8;
+    color: var(--light-color);
+    font-size: 1.5rem;
+}
+
+.review .review-slider .box h3 {
+    padding-bottom: .5rem;
+    color: var(--black);
+    font-size: 2.2rem;
+}
+
+.review .review-slider .box .stars i {
+    color: var(--orange);
+    font-size: 1.7rem;
+}
+
+.blogs .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.blogs .box-container .box {
+    overflow: hidden;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    background: #fff;
+}
+
+.blogs .box-container .box img {
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blogs .box-container .box .content {
+    padding: 2rem;
+}
+
+.blogs .box-container .box .content .icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: var(--border);
+}
+
+
+/* media queries  */
+
+@media (max-width:991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header .search-form {
+        width: 90%;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 110%;
+        right: -110%;
+        width: 30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: #fff;
+    }
+
+    .header .navbar.active {
+        right: 2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a {
+        font-size: 2rem;
+        margin: 2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+@media (max-width:450px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .footer .box-container .box .payment-img {
+        margin: 2rem auto;
+    }
+
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn:hover a {
+    color: #ff7800;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding-right: 0%;
+    opacity: 250%;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    padding-right: 20%;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: rgb(245, 164, 14);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: transparent;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: #ff7800;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: transparent;
+}
+
+.dropdown:hover a {
+    color: #ff7800;
+}
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 173px;
+    background-color: transparent;
+}
+
+div.gallery:hover {
+    border: none;
+    background-color: rgb(245, 164, 14);
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    font-size: 12px;
+    text-align: center;
+    color: whitesmoke;
+}
+
+table {
+    background-color: #191b2a;
+}
+
+table .tr .td {
+    background-color: #d26a10;
+}
+
+
+div .numbertext {
+    color: #fff;
+    font-size: 20px;
+    padding-top: 17%;
+    padding-left: 3%;
+    font-weight: 1000;
+}
+
+div .numbertext a {
+    color: #ff7800;
+    font-size: 4.8rem;
+}
+
+div .numbertext h1 {
+    font-size: 4.8rem;
+}
+
+div .numbertext .options {
+    background-color: #76b900;
+    padding: .8rem 2rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 1000;
+
+}
+
+div .numbertext .options:hover {
+    background-color: #5c8a06;
+}
+
+div .numbertext .options1 {
+    background-color: #ff7800;
+    padding: .8rem 2rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 1000;
+}
+
+div .numbertext .options1:hover {
+    background-color: #d26a10;
+}
+
+div .rx h1 {
+    font-size: 4.8rem;
+}
+
+div .rx a {
+    color: #F90948;
+    font-size: 5rem;
+}
+
+div .numbertext .options2 {
+    background-color: #F90948;
+    padding: .8rem 2rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 1000;
+}
+
+div .numbertext .options2:hover {
+    background-color: #f90949b9;
+}
+
+.builds h1 {
+    padding-left: 25px;
+    font-size: 2rem;
+}
+
+hr {
+    background-color: black;
+    height: 0.8px;
+    width: 85%;
+    margin-top: 0;
+
+
+}
+
+.footer {
+    background: #191b2a;
+    ;
+}
+
+.f1 {
+    margin-top: 6rem;
+}
+
+.f1 p {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.f1 img {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.f2 {
+    margin-top: 0rem;
+    padding-left: 20rem;
+    padding-bottom: 0rem;
+}
+
+.f2 h1 {
+    font-size: 5rem;
+    color: #fff;
+}
+
+.f2 hr {
+    background-color: #fff;
+    height: 0.8px;
+    width: 100%;
+}
+
+.f2 p {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.f2 a {
+    text-decoration: none;
+    color: aqua;
+}
+
+.f2 a:hover {
+    text-decoration: underline;
+    color: aqua;
+}
+
+
+.login-status {
+
+    color: #f6831e;
+    padding-left: 25%;
+
+}
+
+.login-status a {
+    color: #fff;
+    font-size: 3rem;
+}
+
+
+.login-status a:hover {
+    color: #f6831e;
+}
+
+.fa-user {
+    color: #fff;
+    font-size: 3rem;
+
+}
+
+.fa-user:hover {
+    color: #f6831e;
+}
+
+
+.success {
+    background: #D4EDDA;
+    color: #40754C;
+    padding: 11px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+}
